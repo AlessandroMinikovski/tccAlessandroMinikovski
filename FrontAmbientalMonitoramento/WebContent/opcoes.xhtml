@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich">
+<h:head>
+	<title>Módulo Monitoramento</title>
+</h:head>
+<h:body>
+	<rich:panel header="Portal de Monitoramento" style ="width: 400px;">
+		<h:form>
+			<h:commandButton value="Reiniciar Dados"
+				action="#{monitoramentoBean.telaReiniciarDados}"
+				style="margin-top: 10px; width: 264px;"></h:commandButton>
+			<br></br>
+			<h:commandButton value="Cadastrar Sensor"
+				action="#{monitoramentoBean.telaCadastrarSensor}"
+				style="margin-top: 20px; width: 264px;"></h:commandButton>
+			<br></br>
+			<h:commandButton value="Consultar Sensores"
+				action="#{monitoramentoBean.telaConsultarSensores}"
+				style="margin-top: 20px; width: 264px;"></h:commandButton>
+			<br></br>
+			<h:commandButton value="Atualizar Valor do Sensor"
+				action="#{monitoramentoBean.telaAtualizarSensor}"
+				style="margin-top: 20px; width: 264px;"></h:commandButton>
+			<br></br>
+			<h:commandButton value="Cadastrar Condição de Segurança"
+				action="#{monitoramentoBean.telaCadastrarCondi}"
+				style="margin-top: 20px; width: 264px;"></h:commandButton>
+			<br></br>
+			<h:commandButton value="Consultar Condições de Segurança"
+				action="#{monitoramentoBean.telaConsultarCondi}"
+				style="margin-top: 20px; width: 264px;"></h:commandButton>
+		</h:form>
+	</rich:panel>
+</h:body>
+</html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title>Cadastrar Verificação Condição de Segurança</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h:outputText value="ID da Condição"></h:outputText>
+		<h:inputText value="#{segurancaBean.verificacao.idCondi}"></h:inputText>
+		<br></br>
+		<h:outputText value="ID da Alerta"></h:outputText>
+		<h:inputText value="#{segurancaBean.verificacao.idAlerta}"></h:inputText>
+		<br></br>
+		<h:outputText value="ID do Sensor"></h:outputText>
+		<h:inputText value="#{segurancaBean.verificacao.idSensor}"></h:inputText>
+		<br></br>
+		<h:outputText value="Frequencia em milisegundos"></h:outputText>
+		<h:inputText value="#{segurancaBean.verificacao.frequencia}"></h:inputText>
+		<br></br>
+		<h:commandButton value="Incluir Condição"
+			action="#{segurancaBean.incluirVerificacao}"></h:commandButton>
+    	</h:form>
+</h:body>
+</html>

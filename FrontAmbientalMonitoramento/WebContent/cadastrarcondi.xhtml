@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich">
+
+<h:head>
+	<title>Cadastrar Condição de Segurança</title>
+</h:head>
+<h:body>
+	<h:form>
+		<rich:panel header="Portal de Monitoramento" style="width: 400px;">
+		<h2>Cadastrar Condição de Segurança</h2>
+			<h:panelGrid columns="1" width="100%">
+				<h:panelGrid columns="2">
+					<h:outputText value="Nome da condição"></h:outputText>
+					<h:inputText value="#{monitoramentoBean.condi.nomeCondi}"></h:inputText>
+					<h:outputText value="ID do Sensor"></h:outputText>
+					<h:inputText value="#{monitoramentoBean.condi.idSensor}"></h:inputText>
+					<h:outputText value="Valor máxmio do sensor"></h:outputText>
+					<h:inputText value="#{monitoramentoBean.condi.valorMaximoSensor}"></h:inputText>
+					<h:outputText value="Valor mínimo do sensor"></h:outputText>
+					<h:inputText value="#{monitoramentoBean.condi.valorMinimoSensor}"></h:inputText>
+					<h:outputText value="Tipo de acionamento (1 =  Defesa Civil)"></h:outputText>
+					<h:inputText value="#{monitoramentoBean.condi.tipoAcionamento}"></h:inputText>
+				</h:panelGrid>
+				<h:panelGrid columns="3" style="margin-top:15px">
+					<h:commandButton value="Voltar" action="#{monitoramentoBean.home}"></h:commandButton>
+					<h:commandButton value="Incluir Condição"
+						action="#{monitoramentoBean.incluirCondicao}"></h:commandButton>
+				</h:panelGrid>
+
+
+			</h:panelGrid>
+		</rich:panel>
+	</h:form>
+
+</h:body>
+</html>

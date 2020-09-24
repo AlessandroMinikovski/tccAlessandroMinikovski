@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich">
+
+<h:head>
+	<title>Lista de Alertas</title>
+</h:head>
+<h:body>
+	<h:form>
+
+		<rich:panel header="Portal de Segurança e Comunicação" style="width: 400px;">
+			<h2>Consultar Alertas</h2>
+
+
+
+			<rich:dataTable value="#{segurancaBean.alertas}" var="alerta"
+				id="table">
+				<f:facet name="header">
+					<h:outputText value="Lista de Alertas" />
+				</f:facet>
+				<rich:column>
+					<f:facet name="header">
+						<h:outputText value="ID" />
+					</f:facet>
+					<h:outputText value="#{alerta.id}" />
+				</rich:column>
+				<rich:column>
+					<f:facet name="header">
+						<h:outputText value="Modelo" />
+					</f:facet>
+					<h:outputText value="#{alerta.modelo}" />
+				</rich:column>
+				<rich:column>
+					<f:facet name="header">
+						<h:outputText value="Localização" />
+					</f:facet>
+					<h:outputText value="#{alerta.localizacao}" />
+				</rich:column>
+				<rich:column>
+					<f:facet name="header">
+						<h:outputText value="Acionado" />
+					</f:facet>
+					<h:outputText value="#{alerta.acionado}" />
+				</rich:column>
+			</rich:dataTable>
+			<h:panelGrid columns="3" style="margin-top:15px">
+				<h:commandButton value="Voltar" action="#{segurancaBean.home}"></h:commandButton>
+			</h:panelGrid>
+		</rich:panel>
+	</h:form>
+</h:body>
+</html>

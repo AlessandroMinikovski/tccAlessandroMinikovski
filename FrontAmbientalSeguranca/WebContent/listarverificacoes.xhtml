@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+<h:head>
+	<title>Lista de Verificações</title>
+</h:head>
+<h:body>
+	<h:form>
+
+		<rich:panel header="Portal de Segurança e Comunicação"
+			style="width: 400px;">
+			<h2>Lista de Verificações</h2>
+
+
+
+			<rich:dataTable value="#{segurancaBean.verificacoes}"
+				var="verificacao" id="table">
+				<f:facet name="header">
+					<h:outputText value="Lista de Alertas" />
+				</f:facet>
+				<rich:column>
+					<f:facet name="header">
+						<h:outputText value="ID" />
+					</f:facet>
+					<h:outputText value="#{verificacao.id}" />
+				</rich:column>
+				<rich:column>
+					<f:facet name="header">
+						<h:outputText value="ID da Condição" />
+					</f:facet>
+					<h:outputText value="#{verificacao.idCondi}" />
+				</rich:column>
+				<rich:column>
+					<f:facet name="header">
+						<h:outputText value="ID da Alerta" />
+					</f:facet>
+					<h:outputText value="#{verificacao.idAlerta}" />
+				</rich:column>
+				<rich:column>
+					<f:facet name="header">
+						<h:outputText value="ID do Sensor" />
+					</f:facet>
+					<h:outputText value="#{verificacao.idSensor}" />
+				</rich:column>
+				<rich:column>
+					<f:facet name="header">
+						<h:outputText value="Frequencia" />
+					</f:facet>
+					<h:outputText value="#{verificacao.frequencia}" />
+				</rich:column>
+				<rich:column>
+					<f:facet name="header">
+						<h:outputText value="Acionado" />
+					</f:facet>
+					<h:outputText value="#{verificacao.acionado}" />
+				</rich:column>
+				<rich:column>
+					<f:facet name="header">
+						<h:outputText value="Ação" />
+					</f:facet>
+					<a4j:commandButton
+						actionListener="#{segurancaBean.ativarVerificacao}"
+						rendered="#{verificacao.acionado == 'F'}" value="Ativar"
+						oncomplete="document.location.reload(true);">
+						<f:attribute name="idVerificacao" value="#{verificacao.id}" />
+					</a4j:commandButton>
+					<a4j:commandButton id="teste"
+						actionListener="#{segurancaBean.desativarVerificacao}"
+						rendered="#{verificacao.acionado == 'V'}" value="Desativar"
+						oncomplete="document.location.reload(true);">
+						<f:attribute name="idVerificacao" value="#{verificacao.id}" />
+					</a4j:commandButton>
+				</rich:column>
+			</rich:dataTable>
+			<h:panelGrid columns="3" style="margin-top:15px">
+				<h:commandButton value="Voltar" action="#{segurancaBean.home}"></h:commandButton>
+			</h:panelGrid>
+		</rich:panel>
+	</h:form>
+</h:body>
+</html>

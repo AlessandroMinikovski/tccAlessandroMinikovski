@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich">
+
+<h:head>
+	<title>Lista de sensores</title>
+</h:head>
+<h:body>
+	<h:form>
+
+		<rich:panel header="Portal de Monitoramento" style="width: 700px;">
+			<h2>Consultar Sensores</h2>
+
+
+
+			<rich:dataTable value="#{monitoramentoBean.sensores}" var="sensor"
+				id="table">
+				<f:facet name="header">
+					<h:outputText value="Lista de sensores" />
+				</f:facet>
+				<rich:column>
+					<f:facet name="header">
+						<h:outputText value="ID" />
+					</f:facet>
+					<h:outputText value="#{sensor.id}" />
+				</rich:column>
+				<rich:column>
+					<f:facet name="header">
+						<h:outputText value="Modelo" />
+					</f:facet>
+					<h:outputText value="#{sensor.modelo}" />
+				</rich:column>
+				<rich:column>
+					<f:facet name="header">
+						<h:outputText value="Finalidade" />
+					</f:facet>
+					<h:outputText value="#{sensor.finalidade}" />
+				</rich:column>
+				<rich:column>
+					<f:facet name="header">
+						<h:outputText value="Tipo de conexão" />
+					</f:facet>
+					<h:outputText value="#{sensor.tipoConexao}" />
+				</rich:column>
+				<rich:column>
+					<f:facet name="header">
+						<h:outputText value="Valor" />
+					</f:facet>
+					<h:outputText value="#{sensor.valor}" />
+				</rich:column>
+			</rich:dataTable>
+			<h:panelGrid columns="3" style="margin-top:15px">
+				<h:commandButton value="Voltar" action="#{monitoramentoBean.home}"></h:commandButton>
+			</h:panelGrid>
+		</rich:panel>
+	</h:form>
+</h:body>
+</html>

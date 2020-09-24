@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+<h:head>
+	<title>Lista de Verificações</title>
+</h:head>
+<h:body>
+
+	<h:form>
+		<h2>Lista de Verificações</h2>
+
+		
+			<table class="order-table">
+				<tr>
+					<th class="order-table-header">ID</th>
+					<th class="order-table-header">ID da Condição</th>
+					<th class="order-table-header">ID da Alerta</th>
+					<th class="order-table-header">ID do Sensor</th>
+					<th class="order-table-header">Frequencia</th>
+					<th class="order-table-header">Acionado</th>
+					<th>Ação</th>
+
+				</tr>
+				<tbody>
+					<ui:repeat var="verificacao" value="#{segurancaBean.verificacoes}">
+						<tr>
+							<td class="order-table-even-row">#{verificacao.id}</td>
+							<td class="order-table-even-row">#{verificacao.idCondi}</td>
+							<td class="order-table-even-row">#{verificacao.idAlerta}</td>
+							<td class="order-table-even-row">#{verificacao.idSensor}</td>
+							<td class="order-table-even-row">#{verificacao.frequencia}</td>
+							<td class="order-table-even-row">#{verificacao.acionado}</td>
+							<td>	
+							
+								<a4j:commandButton actionListener="#{segurancaBean.ativarVerificacao}" rendered="#{verificacao.acionado == 'F'}" value="Ativar" oncomplete="document.location.reload(true);" >
+									<f:attribute name="idVerificacao" value="#{verificacao.id}" />
+								</a4j:commandButton>
+								<a4j:commandButton id="teste" actionListener="#{segurancaBean.desativarVerificacao}" rendered="#{verificacao.acionado == 'V'}" value="Desativar" oncomplete="document.location.reload(true);">
+									<f:attribute name="idVerificacao" value="#{verificacao.id}" />
+								</a4j:commandButton>
+								
+							</td>
+						</tr>
+					</ui:repeat>
+				</tbody>
+			</table>
+
+		<h:commandButton value="Voltar ao início"
+			action="#{segurancaBean.home}" />
+
+	</h:form>
+</h:body>
+</html>

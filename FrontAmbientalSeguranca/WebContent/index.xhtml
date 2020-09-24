@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich">
+<h:head>
+	<title>Módulo Segurança e Comunicação</title>
+</h:head>
+<h:body>
+	<h:outputStylesheet>
+        .col1 {
+            width: 260px;
+        }
+         
+        .col4 {
+            word-break: break-all;
+        }
+        
+        .mt15{
+       		margin-top: 15px;
+        }
+    </h:outputStylesheet>
+	<h:form id="form">
+	<rich:panel header="Portal de Segurança e Comunicação" style="width: 400px;">
+			<h2 style="text-align: center;">Favor informar os seus dado para acesso ao Portal de Segurança e Comunicação</h2>
+	
+		<h:panelGrid columns="2" columnClasses="col1, col2">
+			<h:panelGrid>
+				<h:panelGrid columns="2" id="userInfoPanel1" styleClass="">
+					<h:outputText value="Usuario: "/>
+					<h:inputText  />
+					<h:outputText value="Senhha: " />
+					<h:inputSecret />
+				</h:panelGrid>
+				<h:commandButton value="Entrar" action="opcoes" styleClass="mt15"/>
+			</h:panelGrid>
+		</h:panelGrid>
+		</rich:panel>
+	</h:form>
+</h:body>
+</html>

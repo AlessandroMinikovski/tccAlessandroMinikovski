@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+       xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <h:head>
+        <title>Lista de alertas</title>
+    </h:head>
+    <h:body>
+    	
+    	<h:form>
+    		<h2>Lista de alertas</h2>
+    		
+    		<table class="order-table">
+	    		<tr>
+	    			<th class="order-table-header">ID</th>
+	    			<th class="order-table-header">Modelo</th>
+	    			<th class="order-table-header">Localização</th>
+	    			<th class="order-table-header">Acionado</th>
+	    		</tr>
+	    		<tbody>
+		    		<ui:repeat var="alerta" value="#{segurancaBean.alertas}">
+			   			 <tr>
+				    		<td class="order-table-even-row">#{alerta.id}</td>
+				    		<td class="order-table-even-row">#{alerta.modelo}</td>
+				    		<td class="order-table-even-row">#{alerta.localizacao}</td>
+				    		<td class="order-table-even-row">#{alerta.acionado}</td>
+				    	 </tr>
+		    		</ui:repeat>
+	    		</tbody>
+	    	</table>
+    	
+    	<h:commandButton value="Voltar ao início" action="#{segurancaBean.home}"/>
+    	
+    	</h:form>
+    </h:body>
+</html>
